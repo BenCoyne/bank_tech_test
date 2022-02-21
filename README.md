@@ -1,3 +1,36 @@
+# User Stories 
+
+```
+As a customer 
+So I can have a bank account 
+I want to be able to open a bank account √
+
+As a customer
+So I can accuaretly track my transactions
+I want the default amount of money to be set to 0 √
+
+As a customer
+So I can increase save money
+I want to be able to deposit funds from my account 
+
+As a customer
+So I can spend money
+I want to be able to withdraw funds from my account  
+
+As a customer
+So I can see an accurate representation of my transactions
+I want to be able to print my account statement (date, amount, balance). 
+
+As a customer
+So I can easily ready my account balance
+I want the balance to be displayed in GBP to two decimal places
+
+As a customer
+So I can better track my transactions
+I want to see the most recent transaction first on the account statement.
+
+```
+
 # Bank tech test
 
 Today, you'll practice doing a tech test.
@@ -36,12 +69,7 @@ date || credit || debit || balance
 
 Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
 
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
+
 
 ---
 
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/course&prefill_File=individual_challenges/bank_tech_test.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/course&prefill_File=individual_challenges/bank_tech_test.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/course&prefill_File=individual_challenges/bank_tech_test.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/course&prefill_File=individual_challenges/bank_tech_test.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy/course&prefill_File=individual_challenges/bank_tech_test.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
-
-<!-- END GENERATED SECTION DO NOT EDIT -->
