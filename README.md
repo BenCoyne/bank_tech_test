@@ -3,11 +3,11 @@
 ```
 As a customer 
 So I can have a bank account 
-I want to be able to open a bank account √
+I want to be able to open a bank account 
 
 As a customer
 So I can accuaretly track my transactions
-I want the default amount of money to be set to 0 √
+I want the default amount of money to be set to 0 
 
 As a customer
 So I can increase save money
@@ -28,6 +28,14 @@ I want the balance to be displayed in GBP to two decimal places
 As a customer
 So I can better track my transactions
 I want to see the most recent transaction first on the account statement.
+
+As a customer
+So I cannot deposit an invalid amount
+I want to see an error message if I deposit an amount <= 0
+
+As a customer
+So I cannot withdraw funds I do not have
+I want to see an error message if I withdraw an amount > my account balance
 
 ```
 
