@@ -3,19 +3,19 @@
 ```
 As a customer 
 So I can have a bank account 
-I want to be able to open a bank account 
+I want to be able to open a bank account √
 
 As a customer
 So I can accuaretly track my transactions
-I want the default amount of money to be set to 0 
+I want the default amount of money to be set to 0 √
 
 As a customer
-So I can increase save money
-I want to be able to deposit funds from my account 
+So I can increase my account balance
+I want to be able to deposit funds from my account √
 
 As a customer
-So I can spend money
-I want to be able to withdraw funds from my account  
+So I can receive my money
+I want to be able to withdraw funds from my account  √
 
 As a customer
 So I can see an accurate representation of my transactions
