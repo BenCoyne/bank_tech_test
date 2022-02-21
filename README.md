@@ -3,31 +3,31 @@
 ```
 As a customer 
 So I can have a bank account 
-I want to be able to open a bank account √
+I want to be able to open a bank account 
 
 As a customer
 So I can accuaretly track my transactions
-I want the default amount of money to be set to 0 √
+I want the default amount of money to be set to 0 
 
 As a customer
 So I can increase my account balance
-I want to be able to deposit funds from my account √
+I want to be able to deposit funds from my account 
 
 As a customer
 So I can receive my money
-I want to be able to withdraw funds from my account  √
+I want to be able to withdraw funds from my account  
 
 As a customer
-So I can see an accurate representation of my transactions
+So I can see an accurate representation of my transactions 
 I want to be able to print my account statement (date, amount, balance). 
 
 As a customer
-So I can easily ready my account balance
-I want the balance to be displayed in GBP to two decimal places
+So I can easily ready my account balance 
+I want the balance to be displayed in GBP to two decimal places 
 
 As a customer
 So I can better track my transactions
-I want to see the most recent transaction first on the account statement.
+I want to see the most recent transaction first on the account statement. 
 
 As a customer
 So I cannot deposit an invalid amount

@@ -9,4 +9,5 @@ end
 group :development do
   gem 'rubocop'
   gem 'simplecov'
+  gem 'simplecov-console'
 end
