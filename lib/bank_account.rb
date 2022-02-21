@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'date'
-require 'bank_statement'
+require_relative 'bank_statement'
 
 class BankAccount
   STARTING_BALANCE = 0
@@ -14,13 +14,13 @@ class BankAccount
   end
 
   def deposit(amount)
-    @balance += amount
-    @transactions << transaction(amount, 'credit')
+    update_balance(amount)
+    make_transaction(amount, 'credit')
   end
 
   def withdraw(amount)
-    @balance -= amount
-    @transactions << transaction(amount, 'debit')
+    update_balance(-amount)
+    make_transaction(amount, 'debit')
   end
 
   def print_statement
@@ -29,7 +29,11 @@ class BankAccount
 
   private
 
-  def transaction(amount, transaction_type)
-    { date: Date.today, type: transaction_type, amount: amount, balance: @balance }
+  def update_balance(amount)
+    @balance += amount
+  end
+
+  def make_transaction(amount, transaction_type)
+    @transactions << { date: Date.today, type: transaction_type, amount: amount, balance: @balance }
   end
 end
