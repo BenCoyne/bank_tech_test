@@ -13,4 +13,19 @@ describe Bank_Account do
     end
   end
   
+  describe '#deposit' do
+    it 'increases the balance' do
+      account.deposit(100)
+      expect(account.balance).to eq(100)
+    end
+  end
+
+  describe '#withdraw' do
+    it 'decreases the balance' do
+      account.deposit(100)
+      account.withdraw(10)
+      expect(account.balance).to eq(90)
+    end
+  end
+
 end
