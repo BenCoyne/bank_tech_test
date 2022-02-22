@@ -21,7 +21,7 @@ describe BankStatement do
     let(:date) { Date.today.strftime('%d/%m/%Y') }
 
     it 'returns the bank statement as a string' do
-      expect(statement.print_statement).to eq(
+      expect(statement.statement_formatter).to eq(
         "date || credit || debit || balance
 #{date} || || £20.00 || £70.00
 #{date} || || £10.00 || £90.00

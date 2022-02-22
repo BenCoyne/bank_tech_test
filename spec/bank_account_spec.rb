@@ -14,14 +14,14 @@ describe BankAccount do
 #{date} || £1000.00 || || £1000.00
 "
   end
-  
+
   it 'creates an instance of bank_account' do
     expect(account).to be_a(BankAccount)
   end
 
   describe '#transactions' do
     it 'has a transactions array that starts empty' do
-      expect(account.transactions).to be_an(Array) 
+      expect(account.transactions).to be_an(Array)
       expect(account.transactions).to be_empty
     end
   end
@@ -44,6 +44,12 @@ describe BankAccount do
       account.deposit(100)
       account.withdraw(10)
       expect(account.balance).to eq(90)
+    end
+
+    context 'if the balance is £0.00' do
+      it 'raises a ZeroBalanceError' do
+        expect { account.withdraw(10) }.to raise_error(InsufficientFundsError)
+      end
     end
   end
 

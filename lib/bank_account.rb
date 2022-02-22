@@ -2,6 +2,7 @@
 
 require 'date'
 require_relative 'bank_statement'
+require_relative 'insufficient_funds_error'
 
 class BankAccount
   STARTING_BALANCE = 0
@@ -19,21 +20,34 @@ class BankAccount
   end
 
   def withdraw(amount)
-    update_balance(-amount)
-    make_transaction(amount, 'debit')
+    if insufficient_funds?(amount)
+      raise InsufficientFundsError
+    else
+      update_balance(-amount)
+      make_transaction(amount, 'debit')
+    end
   end
 
   def print_statement
-    puts @statement.print_statement
+    puts @statement.statement_formatter
   end
 
   private
+
+  def insufficient_funds?(amount)
+    @balance - amount <= 0
+  end
 
   def update_balance(amount)
     @balance += amount
   end
 
   def make_transaction(amount, transaction_type)
-    @transactions << { date: Date.today, type: transaction_type, amount: amount, balance: @balance }
+    @transactions << {
+      date: Date.today,
+      type: transaction_type,
+      amount: amount,
+      balance: @balance
+    }
   end
 end
