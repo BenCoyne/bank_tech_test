@@ -37,6 +37,12 @@ describe BankAccount do
       account.deposit(100)
       expect(account.balance).to eq(100)
     end
+
+    context 'if the user tries to deposit a negative number' do
+      it 'raises a NegativeAmountError' do
+        expect { account.deposit(-10) }.to raise_error(NegativeAmountError)
+      end
+    end
   end
 
   describe '#withdraw' do
@@ -47,8 +53,15 @@ describe BankAccount do
     end
 
     context 'if the balance is £0.00' do
-      it 'raises a ZeroBalanceError' do
+      it 'raises a InsufficientFundsError' do
         expect { account.withdraw(10) }.to raise_error(InsufficientFundsError)
+      end
+    end
+
+    context 'if the user tries to withdraw a negative number' do
+      it 'raises a NegativeAmountError' do
+        account.deposit(100)
+        expect { account.withdraw(-1) }.to raise_error(NegativeAmountError)
       end
     end
   end

@@ -3,6 +3,7 @@
 require 'date'
 require_relative 'bank_statement'
 require_relative 'insufficient_funds_error'
+require_relative 'negative_amount_error'
 
 class BankAccount
   STARTING_BALANCE = 0
@@ -15,17 +16,15 @@ class BankAccount
   end
 
   def deposit(amount)
+    deposit_error_check(amount)
     update_balance(amount)
     make_transaction(amount, 'credit')
   end
 
   def withdraw(amount)
-    if insufficient_funds?(amount)
-      raise InsufficientFundsError
-    else
-      update_balance(-amount)
-      make_transaction(amount, 'debit')
-    end
+    withdraw_error_check(amount)
+    update_balance(-amount)
+    make_transaction(amount, 'debit')
   end
 
   def print_statement
@@ -34,8 +33,13 @@ class BankAccount
 
   private
 
-  def insufficient_funds?(amount)
-    @balance - amount <= 0
+  def deposit_error_check(amount)
+    raise NegativeAmountError if amount <= 0
+  end
+
+  def withdraw_error_check(amount)
+    raise NegativeAmountError if amount <= 0
+    raise InsufficientFundsError if @balance - amount <= 0
   end
 
   def update_balance(amount)
