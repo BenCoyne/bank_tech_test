@@ -16,9 +16,9 @@ class BankStatement
     @transactions.reverse.each do |transaction|
       case transaction[:type]
       when 'debit'
-        statement << "#{date_formatter(transaction[:date])} || || #{currency_formatter(transaction[:amount])} || #{currency_formatter(transaction[:balance])}\n"
+        statement << debit_transaction(transaction)
       when 'credit'
-        statement << "#{date_formatter(transaction[:date])} || #{currency_formatter(transaction[:amount])} || || #{currency_formatter(transaction[:balance])}\n"
+        statement << credit_transaction(transaction)
       end
     end
     statement
@@ -26,11 +26,19 @@ class BankStatement
 
   private
 
-  def currency_formatter(amount)
+  def currency_parse(amount)
     format('£%.2f', amount)
   end
 
-  def date_formatter(date)
+  def date_parse(date)
     date.strftime(DATE_FORMAT)
+  end
+
+  def debit_transaction(transaction)
+    "#{date_parse(transaction[:date])} || || #{currency_parse(transaction[:amount])} || #{currency_parse(transaction[:balance])}\n"
+  end
+
+  def credit_transaction(transaction)
+    "#{date_parse(transaction[:date])} || #{currency_parse(transaction[:amount])} || || #{currency_parse(transaction[:balance])}\n"
   end
 end

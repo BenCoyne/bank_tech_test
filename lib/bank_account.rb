@@ -19,12 +19,14 @@ class BankAccount
     deposit_error_check(amount)
     update_balance(amount)
     make_transaction(amount, 'credit')
+    @balance
   end
 
   def withdraw(amount)
     withdraw_error_check(amount)
     update_balance(-amount)
     make_transaction(amount, 'debit')
+    @balance
   end
 
   def print_statement
