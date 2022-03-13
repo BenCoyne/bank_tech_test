@@ -27,7 +27,7 @@ class BankStatement
   private
 
   def currency_parse(amount)
-    format('£%.2f', amount)
+    format('%.2f', amount)
   end
 
   def date_parse(date)

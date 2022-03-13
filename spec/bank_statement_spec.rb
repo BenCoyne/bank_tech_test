@@ -23,9 +23,9 @@ describe BankStatement do
     it 'returns the bank statement as a string' do
       expect(statement.statement_formatter).to eq(
         "date || credit || debit || balance
-#{date} || || £20.00 || £70.00
-#{date} || || £10.00 || £90.00
-#{date} || £100.00 || || £100.00
+#{date} || || 20.00 || 70.00
+#{date} || || 10.00 || 90.00
+#{date} || 100.00 || || 100.00
 "
       )
     end
