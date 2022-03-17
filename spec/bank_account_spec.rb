@@ -19,13 +19,6 @@ describe BankAccount do
     expect(account).to be_a(BankAccount)
   end
 
-  describe '#transactions' do
-    it 'has a transactions array that starts empty' do
-      expect(account.transactions).to be_an(Array)
-      expect(account.transactions).to be_empty
-    end
-  end
-
   describe '#balance' do
     it 'has an initial balance of 0' do
       expect(account.balance).to eq(0)
@@ -63,24 +56,6 @@ describe BankAccount do
         account.deposit(100)
         expect { account.withdraw(-1) }.to raise_error(NegativeAmountError)
       end
-    end
-  end
-
-  describe '#transactions' do
-    it 'returns an array of transaction hashes' do
-      account.deposit(100)
-      expect(account.transactions).to eq([{ date: Date.today, type: 'credit', amount: 100, balance: 100 }])
-    end
-
-    it 'can contain multiple transactions hashes' do
-      account.deposit(100)
-      account.withdraw(10)
-      expect(account.transactions).to eq(
-        [
-          { date: Date.today, type: 'credit', amount: 100, balance: 100 },
-          { date: Date.today, type: 'debit', amount: 10, balance: 90 }
-        ]
-      )
     end
   end
 

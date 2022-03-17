@@ -6,8 +6,9 @@ require_relative 'insufficient_funds_error'
 require_relative 'negative_amount_error'
 
 class BankAccount
+  attr_reader :balance
+
   STARTING_BALANCE = 0
-  attr_reader :balance, :transactions
 
   def initialize
     @balance = STARTING_BALANCE
