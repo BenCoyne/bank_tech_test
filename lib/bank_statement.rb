@@ -1,8 +1,6 @@
 require 'date'
 
 class BankStatement
-  attr_reader :transactions
-
   DATE_FORMAT = '%d/%m/%Y'.freeze
   HEADER = "date || credit || debit || balance\n".freeze
 
@@ -26,8 +24,10 @@ class BankStatement
 
   private
 
+  attr_reader :transactions
+
   def currency_parse(amount)
-    format('£%.2f', amount)
+    format('%.2f', amount)
   end
 
   def date_parse(date)
