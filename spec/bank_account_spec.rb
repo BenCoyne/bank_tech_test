@@ -4,14 +4,11 @@ require 'bank_account'
 
 describe BankAccount do
   subject(:account) { described_class.new }
-
-  let(:date) { Date.today.strftime('%d/%m/%Y') }
-
   let(:statement) do
     "date || credit || debit || balance
-#{date} || || 500.00 || 2500.00
-#{date} || 2000.00 || || 3000.00
-#{date} || 1000.00 || || 1000.00
+24/03/2022 || || 500.00 || 2500.00
+24/03/2022 || 2000.00 || || 3000.00
+24/03/2022 || 1000.00 || || 1000.00
 "
   end
 
@@ -61,6 +58,7 @@ describe BankAccount do
 
   describe '#print_statement' do
     it 'prints a formatted statement showing the various transactions' do
+      allow(Date).to receive(:today).and_return Date.new(2022,3,24)
       account.deposit(1000)
       account.deposit(2000)
       account.withdraw(500)
